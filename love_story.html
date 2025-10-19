@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhi ❤️ Anjuu | Forever Love</title>
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+        height:100vh;
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:radial-gradient(circle at top, #ffb6c1, #ff6b81);
+        color:white;
+        font-family:'Poppins',sans-serif;
+        overflow:hidden;
+    }
+    .page {
+        position:absolute;
+        top:0; left:0;
+        width:100%; height:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        opacity:0;
+        transition:opacity 1s ease;
+        text-align:center;
+        padding:20px;
+    }
+    .active { opacity:1; z-index:2; }
+
+    h1 {
+        font-size:2.8em;
+        text-shadow:2px 2px 8px rgba(255,255,255,0.7);
+        animation:float 3s ease-in-out infinite;
+    }
+    p {
+        font-size:1.2em;
+        max-width:650px;
+        margin-top:15px;
+        line-height:1.6;
+        opacity:0;
+        animation:fadeIn 2s forwards 0.8s;
+    }
+    @keyframes float {
+        0%{transform:translateY(0);}
+        50%{transform:translateY(-10px);}
+        100%{transform:translateY(0);}
+    }
+    @keyframes fadeIn {
+        to {opacity:1;}
+    }
+    button {
+        margin-top:30px;
+        background-color:#ff2e63;
+        border:none;
+        padding:14px 40px;
+        border-radius:50px;
+        font-size:1.1em;
+        color:#fff;
+        cursor:pointer;
+        box-shadow:0 0 20px rgba(255,46,99,0.6);
+        transition:all .3s ease;
+        opacity:0;
+        animation:fadeIn 2s forwards 1.5s;
+    }
+    button:hover {
+        transform:scale(1.1);
+        box-shadow:0 0 30px rgba(255,46,99,1);
+        background-color:#ff5689;
+    }
+    .heart {
+        position:absolute;
+        width:20px; height:20px;
+        background:#ff2e63;
+        transform:rotate(45deg);
+        animation:fall 6s linear infinite;
+        opacity:.8;
+    }
+    .heart::before, .heart::after {
+        content:'';
+        position:absolute;
+        width:20px; height:20px;
+        background:#ff2e63;
+        border-radius:50%;
+    }
+    .heart::before { top:-10px; left:0; }
+    .heart::after { left:-10px; top:0; }
+    @keyframes fall {
+        0%{transform:translateY(0) rotate(45deg); opacity:1;}
+        100%{transform:translateY(100vh) rotate(45deg); opacity:0;}
+    }
+    .names {
+        position:absolute;
+        bottom:15px;
+        font-style:italic;
+        font-size:1em;
+        opacity:.9;
+    }
+
+    /* ===== HEART PHOTO FRAMES ===== */
+    .photo-frame {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:40px;
+        margin-top:40px;
+    }
+    .heart-frame {
+        position:relative;
+        width:220px;
+        height:200px;
+        clip-path: path('M110 30 C110 -10, 220 -10, 220 60 C220 120, 110 190, 110 200 C110 190, 0 120, 0 60 C0 -10, 110 -10, 110 30 Z');
+        overflow:hidden;
+        box-shadow:0 0 30px rgba(255,192,203,0.8);
+        animation:glow 2s ease-in-out infinite alternate;
+    }
+    .heart-frame img {
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        transform:scale(1.1);
+        transition:transform 0.5s ease;
+    }
+    .heart-frame:hover img {
+        transform:scale(1.2);
+    }
+    @keyframes glow {
+        from { box-shadow:0 0 20px rgba(255,105,180,0.5); }
+        to { box-shadow:0 0 40px rgba(255,105,180,1); }
+    }
+
+    audio { display:none; }
+</style>
+</head>
+<body>
+
+<!-- Page 1 - Saying Sorry -->
+<div class="page active" id="page1">
+    <h1>I'm Sorry, My Love 💖</h1>
+    <p>
+        Anjuu, I know I made you upset — and that breaks my heart.  
+        You are my world, my calm, my everything.  
+        Please forgive me, my love. I promise to make you smile again. 💌
+    </p>
+    <button onclick="nextPage()">Next ➜</button>
+</div>
+
+<!-- Page 2 - Memories with Heart Frames -->
+<div class="page" id="page2">
+    <h1>Our Memories 🌸</h1>
+    <div class="photo-frame">
+        <div class="heart-frame">
+            <img src="2cb52c02-8c94-44ae-9fb2-cd7b86b1a8fc_1724164731278.png" alt="Abhi & Anjuu 1">
+        </div>
+        <div class="heart-frame">
+            <img src="1738434024433.jpg" alt="Abhi & Anjuu 2">
+        </div>
+    </div>
+    <p>
+        Every laugh we shared, every moment we spent together —  
+        they live in my heart like beautiful dreams that never fade.  
+        You and I, Abhi and Anjuu, our love story is my favorite forever. 💞
+    </p>
+    <button onclick="nextPage()">Next ➜</button>
+</div>
+
+<!-- Page 3 - Promise -->
+<div class="page" id="page3">
+    <h1>My Promise to You 💍</h1>
+    <p>
+        I promise to be patient, to listen, and to love you endlessly.  
+        No matter how many storms come our way,  
+        I’ll hold your hand and never let go. 💕
+    </p>
+    <button onclick="nextPage()">Next ➜</button>
+</div>
+
+<!-- Page 4 - Forever Us -->
+<div class="page" id="page4">
+    <h1>Forever Us ❤️</h1>
+    <p>
+        No matter where life takes us, you’ll always have my heart.  
+        Together, we’re unstoppable — two souls, one heartbeat.  
+        I love you endlessly, Anjuu. 🌹
+    </p>
+    <button onclick="restartPages()">Back to Start 🔄</button>
+</div>
+
+<div class="names">— Abhi ❤️ Anjuu —</div>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2023/07/17/audio_7c9c2cc0f2.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
+<script>
+let current = 1;
+function nextPage(){
+    document.getElementById("page"+current).classList.remove("active");
+    current++;
+    if(current>4) current=1;
+    document.getElementById("page"+current).classList.add("active");
+}
+function restartPages(){
+    document.getElementById("page"+current).classList.remove("active");
+    current=1;
+    document.getElementById("page1").classList.add("active");
+}
+// floating hearts
+function createHeart(){
+    const heart=document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left=Math.random()*100+'vw';
+    heart.style.animationDuration=(4+Math.random()*3)+'s';
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),7000);
+}
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
